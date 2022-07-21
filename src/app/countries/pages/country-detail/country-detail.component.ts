@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { debounceTime, switchMap, tap } from 'rxjs';
+import { debounceTime, switchMap, tap } from 'rxjs/operators';
 
 import { CountryService } from '../../services/country.service';
 import { Country } from '../../interfaces/country.interface';
@@ -22,7 +22,7 @@ export class CountryDetailComponent implements OnInit {
       .pipe(
         switchMap(({ id }) => this.countryService.searchByCountryCode(id)),
         tap(console.log),
-        debounceTime(900)
+        debounceTime(300)
       )
       .subscribe((country) => (this.country = country));
   }
