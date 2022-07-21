@@ -102,5 +102,7 @@
       }
     }
   },
-  "defaultProject": "countriesApp"
+  "cli": {
+    "analytics": false
+  }
 }
