@@ -20,9 +20,9 @@ export class CountryDetailComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params
       .pipe(
-        switchMap(({ id }) => this.countryService.searchByCountryCode(id)),
-        tap(console.log),
-        debounceTime(300)
+        switchMap(({ id }) => this.countryService.searchByCountryCode(id))
+        //tap(console.log),
+        //debounceTime(300)
       )
       .subscribe((country) => (this.country = country));
   }

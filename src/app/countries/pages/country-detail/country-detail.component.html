@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-12">
       <h1>
-        Country: <small>{{ country.name.common }}</small>
+        Country: <small>{{ country.name }}</small>
       </h1>
     </div>
   </div>
@@ -19,13 +19,16 @@
       <h3>Information</h3>
       <ul class="list-group">
         <li class="list-group-item">
+          <strong>Capital</strong> {{ country.capital }}
+        </li>
+        <li class="list-group-item">
           <strong>Population</strong> {{ country.population | number }}
         </li>
         <li class="list-group-item">
-          <strong>Number Code</strong> {{ country.ccn3 }}
+          <strong>Number Code</strong> {{ country.alpha2Code }}
         </li>
         <li class="list-group-item">
-          <strong>Alpha Code</strong> {{ country.cca3 }}
+          <strong>Alpha Code</strong> {{ country.alpha2Code }}
         </li>
       </ul>
     </div>
@@ -33,18 +36,10 @@
   <h3>Translation</h3>
   <div class="row">
     <div class="col">
-      <span class="badge bg-primary mr-1">{{
-        country.translations["ara"].common
-      }}</span>
-      <span class="badge bg-primary mr-1">{{
-        country.translations["spa"].common
-      }}</span>
-      <span class="badge bg-primary mr-1">{{
-        country.translations["jpn"].common
-      }}</span>
-      <span class="badge bg-primary mr-1">{{
-        country.translations["fra"].common
-      }}</span>
+      <span class="badge bg-primary mr-1">{{ country.translations.es }}</span>
+      <span class="badge bg-primary mr-1">{{ country.translations.ja }}</span>
+      <span class="badge bg-primary mr-1">{{ country.translations.de }}</span>
+      <span class="badge bg-primary mr-1">{{ country.translations.it }}</span>
     </div>
   </div>
   <pre class="mt-5">
